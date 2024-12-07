@@ -8,7 +8,9 @@ const filesToDelete = [
   'package.json',
   'package-lock.json',
   'dist-cleanup.js',
-  'dist-pack.js'
+  'dist-pack.js',
+  'CNAME',
+  'NarvukTWUI-Latest.zip'
 ];
 
 // Loop through the list and delete each file from the 'dist' directory
