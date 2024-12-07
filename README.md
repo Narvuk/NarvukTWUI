@@ -21,11 +21,11 @@ Make sure you have the following installed:
 - Follow the [Ruby installation guide](https://www.ruby-lang.org/en/documentation/installation/) and install the required DevKit.
 2. Clone the repository: 
 3. Run `npm run setup` to set up the Node.js and Ruby dependencies.
-4. Run `npm run dev` the development server:
+4. Run `npm run dev` This starts the dev http server for localhost:
 5. Run `npm run watch` TailwindCSS CLI to watch for css changes:
 6. Open your browser and go to `http://localhost:4000`.
 
-**Note:** If the TailwindCSS CLI stops running or if you don't see CSS changes, rerun the CLI by executing:
+**Note:** If the TailwindCSS CLI stops running or if you don't see CSS changes, rerun the CLI by running the watch command:
 
 ---
 
@@ -45,6 +45,8 @@ We appreciate all contributions and will review them as soon as possible. Please
 
 ## Help and Support
 If you encounter any issues or need assistance with the template, feel free to open an issue on our GitHub repository. Please provide as much detail as possible (e.g., error messages, steps to reproduce, screenshots) to help us resolve the issue efficiently.
+
+We have also enabled discussions on this repository if you require community help or questions regarding Narvuk TWUI
 
 We strive to respond and fix issues as quickly as possible. Your feedback is crucial to improving this project!
 
