@@ -1,0 +1,443 @@
+---
+layout: default
+---
+{% include  contentmenus/contentmenu.html title='Content New' %}
+
+<div class="pl-4 pr-4">
+    <!-- Container for Tags and SupportedOS in the same row -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Tags Section (Left Column) -->
+        <div class="bg-white dark:bg-gray-800 p-2 rounded-b-lg shadow-lg border border-gray-200 dark:border-gray-700 mb-4">
+            <div class="flex justify-between items-center border-b border-gray-100 dark:border-gray-700 pb-2">
+                <label class="block text-xl text-gray-800 dark:text-gray-300 font-bold" for="tags">
+                    Tags                    
+                </label>
+                <div class="flex gap-2">
+                    <input type="text" id="newTag"
+                               class="shadow appearance-none border dark:border-gray-600 rounded py-1 px-2 text-gray-700 dark:text-gray-300 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                               @bind-Value="newTagName" placeholder="Add new tag" />
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white px-3 py-1 rounded w-20" @onclick="AddTag">Add</button>
+                </div>
+            </div>
+           
+            <div class="flex justify-between items-start mt-2">
+                <div class="flex-1">
+                    <div class="flex flex-wrap gap-2 mb-2">
+                        
+                            <span class="bg-gradient-to-r from-blue-400 to-blue-600 text-white px-3 py-1 rounded-full flex items-center shadow-sm">
+                                Tag1
+                                <button type="button" class="ml-2 text-white bg-gray-800 hover:bg-gray-900 rounded-full w-5 h-5 flex items-center justify-center text-xs" @onclick="() => RemoveTag(tag)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </span>
+                            <span class="bg-gradient-to-r from-blue-400 to-blue-600 text-white px-3 py-1 rounded-full flex items-center shadow-sm">
+                                Tag2
+                                <button type="button" class="ml-2 text-white bg-gray-800 hover:bg-gray-900 rounded-full w-5 h-5 flex items-center justify-center text-xs" @onclick="() => RemoveTag(tag)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </span>
+                            <span class="bg-gradient-to-r from-blue-400 to-blue-600 text-white px-3 py-1 rounded-full flex items-center shadow-sm">
+                                Tag3
+                                <button type="button" class="ml-2 text-white bg-gray-800 hover:bg-gray-900 rounded-full w-5 h-5 flex items-center justify-center text-xs" @onclick="() => RemoveTag(tag)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </span>
+                        
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+       
+            <!-- Supported OS Section (Right Column) -->
+            <div class="bg-white dark:bg-gray-800 p-2 rounded-b-lg shadow-lg border border-gray-200 dark:border-gray-700 mb-4">
+                <div class="flex justify-between items-center border-b border-gray-100 dark:border-gray-700 pb-2">
+                    <label class="block text-xl text-gray-800 dark:text-gray-300 font-bold" for="supportedOS">
+                        Supported OS
+                        
+                    </label>
+                    <div class="flex gap-2">
+                        <input type="text" id="newOS"
+                                   class="shadow appearance-none border dark:border-gray-600 rounded py-1 px-2 text-gray-700 dark:text-gray-300 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                   @bind-Value="newOSName" placeholder="Add new OS" />
+                        <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white px-3 py-1 rounded w-20" @onclick="AddOS">Add</button>
+                    </div>
+                </div>
+               
+                <div class="flex justify-between items-start mt-2">
+                    <div class="flex-1">
+                        <div class="flex flex-wrap gap-2 mb-2">
+                           
+                                <span class="bg-gradient-to-r from-green-400 to-green-600 text-white px-3 py-1 rounded-full flex items-center shadow-sm">
+                                    Windows
+                                    <button type="button" class="ml-2 text-white bg-gray-800 hover:bg-gray-900 rounded-full w-5 h-5 flex items-center justify-center text-xs" @onclick="() => RemoveOS(os)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </button>
+                                </span>
+                                <span class="bg-gradient-to-r from-green-400 to-green-600 text-white px-3 py-1 rounded-full flex items-center shadow-sm">
+                                    Linux
+                                    <button type="button" class="ml-2 text-white bg-gray-800 hover:bg-gray-900 rounded-full w-5 h-5 flex items-center justify-center text-xs" @onclick="() => RemoveOS(os)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </button>
+                                </span>
+                                <span class="bg-gradient-to-r from-green-400 to-green-600 text-white px-3 py-1 rounded-full flex items-center shadow-sm">
+                                    MacOS
+                                    <button type="button" class="ml-2 text-white bg-gray-800 hover:bg-gray-900 rounded-full w-5 h-5 flex items-center justify-center text-xs" @onclick="() => RemoveOS(os)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </button>
+                                </span>
+                          
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        
+    </div>
+    
+        <!-- EditForm (Now wrapping both columns) -->
+        <EditForm Model="newContent" OnValidSubmit="HandleValidSubmit">            
+            <div class="flex flex-col md:flex-row gap-4">
+                <!-- Left Column (Details Section) -->
+                <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 flex-1">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="title">Title</label>
+                        <input type="text" id="title" class="shadow appearance-none border dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline" @bind-Value="newContent.Title" />
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="title">Summary (0 / 250 characters)</label>
+                        <Input type="text" id="summary" class="shadow appearance-none border dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline" @bind-Value="newContent.Summary" @oninput="OnSummaryChanged" maxlength="250" />
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="content">Description</label>
+                        <textarea id="editor" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                    </div>
+
+                    <!-- Tab Navigation -->
+                    <div class="mt-2 border-t border-l border-r border-gray-200 dark:border-gray-700 rounded-t-lg">
+                        <button 
+                            type="button" 
+                            class="tab py-2 px-4 text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400" 
+                            data-tab="Main" 
+                            onclick="showTabContent('Main', this)">
+                            Main
+                        </button>
+                    
+                        <button 
+                            type="button" 
+                            class="tab py-2 px-4 text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400" 
+                            data-tab="Files" 
+                            onclick="showTabContent('Files', this)">
+                            Files
+                        </button>
+                    
+                        <button 
+                            type="button" 
+                            class="tab py-2 px-4 text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400" 
+                            data-tab="Gallery" 
+                            onclick="showTabContent('Gallery', this)">
+                            Gallery
+                        </button>
+                    </div>
+
+                    <!-- Tab content -->
+                    <div id="tab-content" class="p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-b-lg">
+                        <div data-tab-content="Main" class="hidden">
+                            <div class="flex flex-col md:flex-row md:space-x-4">
+                                <!-- Meta Title and Description Inputs -->
+                                <div class="flex-1 mb-4 md:mb-0">
+                                    <div class="mb-4">
+                                        <!-- Meta Title Input -->
+                                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="metaTitle">Meta Title</label>
+                                        <input type="text" id="metaTitle" class="shadow appearance-none border dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline" @bind-Value="newContent.MetaTitle" />
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <!-- Meta Description Input -->
+                                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="metaDescription">Meta Description</label>
+                                        <input type="text" id="metaDescription" class="shadow appearance-none border dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline" @bind-Value="newContent.MetaDescription" />
+                                    </div>
+                                </div>
+
+                                <!-- Google-style Search Preview -->
+                                <div class="flex-1 p-4 border dark:border-gray-600 rounded-md shadow-lg bg-white dark:bg-gray-700 mb-4 md:mb-0">
+                                    <p class="text-blue-600 dark:text-blue-300 text-lg font-medium mb-1">
+                                         Sample Meta Title | Search Engine
+                                    </p>
+                                    <p class="text-green-600 dark:text-green-400 text-sm mb-2">
+                                        www.narvuk.com › content › section
+                                    </p>
+                                    <p class="text-gray-600 dark:text-gray-200 text-sm leading-relaxed">
+                                        This is a preview of your meta description. Make sure it's concise and between 50-160 characters for optimal display on search results.
+                                    </p>
+                                </div>
+                            </div>
+                          
+                            <div class="mb-4">
+                                <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="demoUrl">Demo URL</label>
+                                <input type="text" id="demoUrl" class="shadow appearance-none border dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline" @bind="newContent.DemoUrl" />
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="documentationUrl">Documentation URL</label>
+                                <input type="text" id="documentationUrl" class="shadow appearance-none border dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline" @bind="newContent.DocumentationUrl" />
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="githubUrl">GitHub URL</label>
+                                <input type="text" id="githubUrl" class="shadow appearance-none border dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline" @bind="newContent.GitHubUrl" />
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="currentVersion">Current Version</label>
+                                <input type="text" id="currentVersion" class="shadow appearance-none border dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline" @bind="newContent.CurrentVersion" />
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="currentDevStage">Current Development Stage</label>
+                                <input type="text" id="currentDevStage" class="shadow appearance-none border dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline" @bind="newContent.CurrentDevStage" />
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="currentLicense">Current License</label>
+                                <input type="text" id="currentLicense" class="shadow appearance-none border dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline" @bind="newContent.CurrentLicense" />
+                            </div>
+                        </div>
+                        <div data-tab-content="Files" class="hidden">
+                            <div class="flex flex-col md:flex-row gap-4">
+                                <!-- Details Column -->
+                                <div class="bg-white dark:bg-gray-600 shadow-md rounded-lg p-4 flex-1">
+                                    
+                                    <div class="text-gray-800 dark:text-gray-100">Files</div>
+                                   
+                                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+                                            
+                                                <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-4">
+                                                    <h3 class="text-lg font-bold mb-2 text-gray-800 dark:text-gray-100">fileName</h3>
+                                                    <p class="text-gray-700 dark:text-gray-300"><strong>Status:</strong>Status</p>                                                  
+                                                    <p class="text-gray-700 dark:text-gray-300 break-words"><strong>Download URL:</strong>https://demourl.com/file.zip </p>                                                    
+                                                    <p class="text-gray-700 dark:text-gray-300"><strong>Release Version:</strong>7.1.6</p>
+                                                    <p class="text-gray-700 dark:text-gray-300"><strong>Release Size:</strong>230 MB</p>
+                                                    <div class="flex justify-end mt-4">
+                                                        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded mr-2">Edit</button>
+                                                        <button type="button" class="bg-red-500 text-white px-4 py-2 rounded">Remove</button>
+                                                    </div>
+                                                </div>
+                                         
+                                        </div>
+                                   
+                                </div>
+                                
+                                    <!-- New Files Form -->
+                                    <div class="bg-white dark:bg-gray-600 rounded-lg shadow-md p-4 flex-none w-full md:w-72">
+                                        <h3 class="text-lg font-bold mb-4 text-gray-800 dark:text-gray-100">Add File</h3>
+                                        <EditForm Model="newFile" Context="fileContext">                                          
+
+                                            <div>
+                                                <button type="button" @onclick="FindSelectFile" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded focus:outline-none focus:shadow-outline">
+                                                    Select File
+                                                </button>
+                                            </div>
+
+                                            <div class="mb-4">
+                                                <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="status">Status</label>
+                                                <select id="status" class="shadow appearance-none border dark:bg-gray-700 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline" @bind-Value="newFile.Status">
+                                                    <option value="">Select a Status</option>
+                                                    <option value="Active">Active</option>
+                                                    <option value="Inactive">Inactive</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="mb-4">
+                                                <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="name">Name</label>
+                                                <input type="text" id="name" class="shadow appearance-none border dark:bg-gray-700 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline" @bind-Value="newFile.Name" />
+                                            </div>
+
+                                           
+                                                <div class="mb-4">
+                                                    <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="downloadUrl">Download URL</label>
+                                                    <input type="text" id="downloadUrl" class="shadow appearance-none border dark:bg-gray-700 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline" @bind-Value="newFile.DownloadUrl" />
+                                                </div>
+                                           
+                                                <div class="mb-4">
+                                                    <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="supportedos">Supported OS</label>
+                                                    <select id="supportedos" class="shadow appearance-none border dark:bg-gray-700 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline" @bind-Value="newFile.SupportedOS">
+                                                        <option value="">Select an OS</option>
+                                                       
+                                                            <option value="Windows">Windows</option>
+                                                            <option value="Linux">Linux</option>
+                                                            <option value="MacOS">MacOS</option>
+                                                        
+                                                    </select>
+                                                </div>
+                                            
+                                            <div class="mb-4">
+                                                <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="releaseVersion">Release Version</label>
+                                                <input type="text" id="releaseVersion" class="shadow appearance-none border dark:bg-gray-700 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline" @bind-Value="newFile.ReleaseVersion" />
+                                            </div>
+
+                                            <div class="mb-4">
+                                                <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="releaseDevStage">Release Dev Stage</label>
+                                                <input type="text" id="releaseDevStage" class="shadow appearance-none border dark:bg-gray-700 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline" @bind-Value="newFile.ReleaseDevStage" />
+                                            </div>
+
+                                            <div class="mb-4">
+                                                <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="releaseLicense">Release License</label>
+                                                <input type="text" id="releaseLicense" class="shadow appearance-none border dark:bg-gray-700 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline" @bind-Value="newFile.ReleaseLicense" />
+                                            </div>
+
+                                            <div class="mb-4">
+                                                <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="downloadSize">Download Size</label>
+                                                <input type="text" id="downloadSize" class="shadow appearance-none border dark:bg-gray-700 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline" @bind-Value="newFile.DownloadSize" />
+                                            </div>
+
+                                            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">
+                                                Add File
+                                            </button>
+                                        </EditForm>
+                                    </div>
+                             
+                            </div>
+                        </div>
+                        <div data-tab-content="Gallery" class="hidden">
+                            <div class="flex flex-col md:flex-row gap-4">
+                                <!-- Details Column -->
+                                <div class="bg-white dark:bg-gray-600 shadow-md rounded-lg p-4 flex-1">       
+                                    <div class="text-gray-800 dark:text-gray-100">Gallery</div>                                   
+                                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">                                           
+                                                <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-4">
+                                                    <img src="https://placehold.co/600x400" alt="image1" class="w-full h-32 object-cover rounded-md mb-4" />
+                                                    <h3 class="text-lg font-bold mb-2 text-gray-800 dark:text-gray-100">Image Name 1</h3>
+                                                    <p class="text-gray-700 dark:text-gray-300 mb-4">Some amazing description for this image</p>
+                                                    <div class="flex justify-end">
+                                                        <button type="button" class="bg-red-500 text-white px-4 py-2 rounded">Delete</button>
+                                                    </div>
+                                                </div>     
+                                                <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-4">
+                                                    <img src="https://placehold.co/600x400" alt="image2" class="w-full h-32 object-cover rounded-md mb-4" />
+                                                    <h3 class="text-lg font-bold mb-2 text-gray-800 dark:text-gray-100">Image Name 2</h3>
+                                                    <p class="text-gray-700 dark:text-gray-300 mb-4">Another amazing description for this image</p>
+                                                    <div class="flex justify-end">
+                                                        <button type="button" class="bg-red-500 text-white px-4 py-2 rounded">Delete</button>
+                                                    </div>
+                                                </div>                                        
+                                        </div>                                   
+                                </div>
+                               
+                                <!-- New Images Form -->
+                                <div class="bg-white dark:bg-gray-600 rounded-lg shadow-md p-4 flex-none w-full md:w-72">
+                                    <h3 class="text-lg font-bold mb-4 text-gray-800 dark:text-gray-100">New Images Form</h3>
+                                    <EditForm Model="newImage" OnValidSubmit="AddImage" Context="imageContext">                                        
+                                        <div>
+                                            <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded focus:outline-none focus:shadow-outline">
+                                                Select Image
+                                            </button>
+                                        </div>
+                                        <div class="mb-4">
+                                            <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="status">Status</label>
+                                            <select id="status" class="shadow appearance-none border dark:bg-gray-700 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline" @bind-Value="newImage.Status">
+                                                <option value="">Select a Status</option>
+                                                <option value="Active">Active</option>
+                                                <option value="Inactive">Inactive</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="name">Name</label>
+                                            <input type="text" id="name" class="shadow appearance-none border dark:bg-gray-700 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline" @bind-Value="newImage.Name" />
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="description">Description</label>
+                                            <input type="text" id="description" class="shadow appearance-none border dark:bg-gray-700 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline" @bind-Value="newImage.Description" />
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="image">Image Url</label>
+                                            <input type="text" id="image" class="shadow appearance-none border dark:bg-gray-700 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline" @bind-Value="newImage.ImageUrl" />
+                                        </div>
+
+                                        <button type="submit" class="bg-blue-500 text-white font-bold py-2 px-4 rounded">Add Image</button>
+                                    </EditForm>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column (Image Upload and Other Fields) -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 flex-none w-full md:w-64">
+                    <h4 class="text-xl font-bold text-gray-900 dark:text-gray-100">Main Image</h4>
+
+                    <div class="mt-2 mb-4">                       
+                        <img src="https://placehold.co/600x400" alt="Image" class="mb-4 w-full h-auto rounded" />
+                      
+                        <div class="mt-4">
+                            <!-- Button to open the image selection modal -->
+                            <button type="button" class="bg-green-500 text-white px-4 py-2 rounded" @onclick="FindMainImage">
+                                Select Image
+                            </button>
+                        </div>                       
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="category">Category</label>
+                        <select id="category" class="shadow appearance-none border dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline" @bind-Value="selectedCategoryId">
+                            <option value="">Select a category</option>                           
+                                <option value="@category.Id">@category.Name</option>                           
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="publishedDate">Published Date</label>
+                        <input type="date" id="publishedDate" class="shadow appearance-none border dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline" @bind-Value="newContent.PublishedDate" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="mt-4 mb-2">
+                <div class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm p-4 max-w-sm mx-auto">
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">
+                        Save Changes
+                    </button>
+                </div>
+            </div>
+        </EditForm>
+ 
+</div>
+
+<script>
+    // Default active tab
+let activeTab = "Main";
+
+// Function to set the active tab
+function showTabContent(tabName, button) {
+    // Set active tab button styles
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('active', 'border-b-2', 'border-orange-600', 'dark:border-orange-400');
+    });
+    button.classList.add('active', 'border-b-2', 'border-orange-600', 'dark:border-orange-400');
+
+    // Show only the content matching the active tab
+    document.querySelectorAll('[data-tab-content]').forEach(content => {
+        if (content.getAttribute('data-tab-content') === tabName) {
+            content.classList.remove('hidden');
+        } else {
+            content.classList.add('hidden');
+        }
+    });
+}
+
+document.onload = showTabContent(activeTab, document.querySelector('.tab'));
+</script>
