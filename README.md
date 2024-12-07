@@ -12,7 +12,6 @@ Make sure you have the following installed:
 - [Node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/) 
 - [Ruby + DevKit](https://www.ruby-lang.org)
-- A code editor like [VS Code](https://code.visualstudio.com/)
 
 ### Installation
 1. Install Prerequisites, if you already have go to the next step
