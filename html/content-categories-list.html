@@ -1,0 +1,105 @@
+---
+layout: default
+---
+{% include  contentmenus/contentmenu.html title='Category List' %}
+
+<div class="mb-4 p-2 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 sticky top-[49px] z-20">
+    <div class="flex flex-col space-y-0 sm:space-y-0 sm:flex-row justify-between items-start sm:items-center sm:space-x-8">
+        <!-- Amount per page -->
+        <div class="flex flex-col sm:flex-row items-center space-x-0 sm:space-x-2 w-full sm:w-auto">
+            <div class="flex items-center justify-between w-full sm:w-auto">
+                <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                    <button class="relative inline-flex items-center px-2 py-1 rounded-l-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5" />
+                        </svg>
+                    </button>
+
+                    <button class="relative inline-flex items-center px-2 py-1 rounded-r-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+                </nav>
+                <select id="pageSize" class="block w-24 py-1 px-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-sm rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 dark:text-gray-300 mt-0 ml-1">
+                    <option value="10" selected>10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>               
+
+                <div class="text-sm text-gray-700 dark:text-gray-300 ml-4 flex flex-grow">
+                    <span class="font-medium me-1">1</span> to
+                    <span class="font-medium ms-1 me-1">10</span> of
+                    <span class="font-medium ms-1 me-1">582</span> results
+                </div>
+
+                <div class="flex items-center md:hidden">
+                    <!-- Additional Options Button -->
+                    <button data-collapse-toggle="navbar-dropdown-additional" type="button"
+                        class="inline-flex items-center me-1 w-8 h-8 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-dropdown-additional" aria-expanded="false">
+                        <span class="sr-only">Open options</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                            <path
+                                d="M6 12a.75.75 0 0 1-.75-.75v-7.5a.75.75 0 1 1 1.5 0v7.5A.75.75 0 0 1 6 12ZM18 12a.75.75 0 0 1-.75-.75v-7.5a.75.75 0 0 1 1.5 0v7.5A.75.75 0 0 1 18 12ZM6.75 20.25v-1.5a.75.75 0 0 0-1.5 0v1.5a.75.75 0 0 0 1.5 0ZM18.75 18.75v1.5a.75.75 0 0 1-1.5 0v-1.5a.75.75 0 0 1 1.5 0ZM12.75 5.25v-1.5a.75.75 0 0 0-1.5 0v1.5a.75.75 0 0 0 1.5 0ZM12 21a.75.75 0 0 1-.75-.75v-7.5a.75.75 0 0 1 1.5 0v7.5A.75.75 0 0 1 12 21ZM3.75 15a2.25 2.25 0 1 0 4.5 0 2.25 2.25 0 0 0-4.5 0ZM12 11.25a2.25 2.25 0 1 1 0-4.5 2.25 2.25 0 0 1 0 4.5ZM15.75 15a2.25 2.25 0 1 0 4.5 0 2.25 2.25 0 0 0-4.5 0Z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hidden w-full md:block md:w-auto additional-options px-2">
+            <!-- Search -->
+            <div class="flex items-center space-x-2 sm:w-auto">
+                <!-- center placeholder -->
+            </div>
+            <!-- Filters -->
+            <div class="flex flex-wrap justify-center sm:space-y-0 sm:flex-row sm:space-x-2 items-start sm:items-center w-full sm:w-auto mt-2 md:mt-0">
+                <input type="text" placeholder="Search Categories"
+                    class="py-1 px-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-sm rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 dark:text-gray-300" />
+                <button class="py-1 px-3 bg-indigo-500 text-white rounded dark:bg-indigo-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mx-auto px-4 py-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-4">
+            <h2 class="text-xl font-bold text-gray-800 dark:text-gray-100">Category 1</h2>
+            <p class="text-gray-600 dark:text-gray-400">Category description summary - amazing content in here</p>
+            <NavLink href="" class="mt-2 inline-block bg-indigo-600 text-white px-4 py-1 rounded-full dark:bg-indigo-400">View</NavLink>
+        </div>
+       
+        <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-4">
+            <h2 class="text-xl font-bold text-gray-800 dark:text-gray-100">Category 2</h2>
+            <p class="text-gray-600 dark:text-gray-400">Category description summary - amazing content in here</p>
+            <NavLink href="" class="mt-2 inline-block bg-indigo-600 text-white px-4 py-1 rounded-full dark:bg-indigo-400">View</NavLink>
+        </div>
+        <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-4">
+            <h2 class="text-xl font-bold text-gray-800 dark:text-gray-100">Category 3</h2>
+            <p class="text-gray-600 dark:text-gray-400">Category description summary - amazing content in here</p>
+            <NavLink href="" class="mt-2 inline-block bg-indigo-600 text-white px-4 py-1 rounded-full dark:bg-indigo-400">View</NavLink>
+        </div>
+        <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-4">
+            <h2 class="text-xl font-bold text-gray-800 dark:text-gray-100">Category 4</h2>
+            <p class="text-gray-600 dark:text-gray-400">Category description summary - amazing content in here</p>
+            <NavLink href="" class="mt-2 inline-block bg-indigo-600 text-white px-4 py-1 rounded-full dark:bg-indigo-400">View</NavLink>
+        </div>
+        <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-4">
+            <h2 class="text-xl font-bold text-gray-800 dark:text-gray-100">Category 5</h2>
+            <p class="text-gray-600 dark:text-gray-400">Category description summary - amazing content in here</p>
+            <NavLink href="" class="mt-2 inline-block bg-indigo-600 text-white px-4 py-1 rounded-full dark:bg-indigo-400">View</NavLink>
+        </div>
+        <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-4">
+            <h2 class="text-xl font-bold text-gray-800 dark:text-gray-100">Category 6</h2>
+            <p class="text-gray-600 dark:text-gray-400">Category description summary - amazing content in here</p>
+            <NavLink href="" class="mt-2 inline-block bg-indigo-600 text-white px-4 py-1 rounded-full dark:bg-indigo-400">View</NavLink>
+        </div>
+    </div>
+</div>

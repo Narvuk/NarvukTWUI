@@ -1,0 +1,43 @@
+{
+  "name": "narvuktwui",
+  "description": "Responsive open source TailwindCSS UI.",
+  "version": "1.0.0-beta",
+  "author": "Narvuk <https://narvuk.com>",
+  "license": "MIT",
+  "scripts": {
+    "watch": "npx tailwindcss -i ./input.css -o ./assets/css/narvuktwui.css --watch",
+    "dev": "jekyll serve",
+    "dev-reload": "jekyll serve --livereload",
+    "install-bundler": "gem install bundler",
+    "bundle-setup": "bundle install",
+    "install-dep": "npm install -D tailwindcss && npm install -D copyfiles && npm install -D rimraf && npm install -D ncp && npm install -D archiver && npm install -D terser",
+    "build": "npx tailwindcss -i ./input.css -o ./assets/css/narvuktwui.css && npm run minify-css && npm run minify-js && jekyll build",
+    "minify-css": "npx tailwindcss -i ./input.css -o ./assets/css/narvuktwui.min.css --minify",
+    "minify-js": "terser ./assets/js/app.js --compress --mangle --output ./assets/js/app.min.js",
+    "setup": "npm run install-bundler && npm run bundle-setup && npm run install-dep",
+    "dist": "rimraf ./dist && npm run build && mkdir dist && ncp _site ./dist && node dist-cleanup.js",
+    "dist-pack": "node dist-pack.js",
+    "rm-dist": "rimraf ./dist"
+  },
+  "keywords": [
+    "css",
+    "design",
+    "framework",
+    "html",
+    "front-end",
+    "responsive",
+    "tailwindcss",
+    "web"
+  ],
+  "devDependencies": {
+    "archiver": "^7.0.1",
+    "copyfiles": "^2.4.1",
+    "ncp": "^2.0.0",
+    "rimraf": "^6.0.1",
+    "terser": "^5.37.0"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.12",
+    "tailwindcss": "^4.0.12"
+  }
+}

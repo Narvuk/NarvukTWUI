@@ -1,0 +1,208 @@
+---
+layout: default
+---
+
+<!-- Dashboard Header -->
+<div class="bg-gradient-to-r from-orange-400/60 via-pink-400/60 to-red-400/30 dark:from-orange-700/70 dark:via-pink-700/70 dark:to-red-700/30 text-gray-900 dark:text-gray-100 py-8 shadow-md">
+    <div class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-4">
+        <!-- Title -->
+        <h1 class="text-xl font-bold tracking-wide drop-shadow-md">
+            Welcome to Your Dashboard
+        </h1>
+        <!-- Search Box -->
+        <div class="relative">
+            <input 
+                type="text" 
+                placeholder="Search..." 
+                class="w-full md:w-64 px-4 py-2 rounded-md bg-white text-gray-800 shadow-sm focus:ring focus:ring-orange-300 dark:bg-gray-800 dark:text-gray-200 dark:focus:ring-orange-500 border border-gray-300 dark:border-gray-700"
+            />
+            <svg xmlns="http://www.w3.org/2000/svg" 
+                 class="absolute top-1/2 right-3 w-5 h-5 transform -translate-y-1/2 text-gray-500 dark:text-gray-400" 
+                 fill="none" 
+                 viewBox="0 0 24 24" 
+                 stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6a4 4 0 100 8 4 4 0 000-8zM21 21l-5.2-5.2" />
+            </svg>
+        </div>
+    </div>
+</div>
+
+<div class="mx-auto px-4 py-4">
+    
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mx-auto py-8">
+        <!-- Stats Card -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+            <h2 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4">Quick Stats</h2>
+            <ul class="space-y-4">
+                <li class="flex justify-between items-center">
+                    <span class="text-gray-700 dark:text-gray-300">Total Users</span>
+                    <span class="text-gray-900 dark:text-gray-100 font-semibold">1,245</span>
+                </li>
+                <li class="flex justify-between items-center">
+                    <span class="text-gray-700 dark:text-gray-300">Active Sessions</span>
+                    <span class="text-gray-900 dark:text-gray-100 font-semibold">87</span>
+                </li>
+                <li class="flex justify-between items-center">
+                    <span class="text-gray-700 dark:text-gray-300">New Signups</span>
+                    <span class="text-gray-900 dark:text-gray-100 font-semibold">56</span>
+                </li>
+                <li class="flex justify-between items-center">
+                    <span class="text-gray-700 dark:text-gray-300">Revenue</span>
+                    <span class="text-green-600 dark:text-green-400 font-semibold">$3,456</span>
+                </li>
+            </ul>
+        </div>
+    
+        <!-- Notes Card -->
+        <div class="col-span-2 bg-gray-200 dark:bg-gray-800 rounded-lg shadow-md p-4">
+            <h2 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">Notes</h2>
+            <form>
+                <textarea 
+                    class="w-full h-32 px-4 py-2 rounded-md bg-gray-50 text-gray-800 shadow-sm border border-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 focus:ring focus:ring-blue-300 dark:focus:ring-blue-500" 
+                    placeholder="Write your note here..."></textarea>
+                <button 
+                    type="submit" 
+                    class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition-all">
+                    Save Note
+                </button>
+            </form>
+        </div>
+        
+        <!-- Stats Card -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+            <h2 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4">Projects Overview</h2>
+            <ul class="space-y-4">
+                <li class="flex justify-between items-center">
+                    <span class="text-gray-700 dark:text-gray-300">Total Projects</span>
+                    <span class="text-gray-900 dark:text-gray-100 font-semibold">82</span>
+                </li>
+                <li class="flex justify-between items-center">
+                    <span class="text-gray-700 dark:text-gray-300">Pending Tasks</span>
+                    <span class="text-red-600 dark:text-red-400 font-semibold">23</span>
+                </li>
+                <li class="flex justify-between items-center">
+                    <span class="text-gray-700 dark:text-gray-300">Completed Tasks</span>
+                    <span class="text-green-600 dark:text-green-400 font-semibold">159</span>
+                </li>
+                <li class="flex justify-between items-center">
+                    <span class="text-gray-700 dark:text-gray-300">Total Comments</span>
+                    <span class="text-blue-600 dark:text-blue-400 font-semibold">1,412</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <!-- Stat Card 1 -->
+      <div class="p-6 bg-white dark:bg-gray-800 shadow rounded-lg">
+        <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Total Users</h2>
+        <p class="text-3xl font-bold text-blue-600 dark:text-blue-400">12,345</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400">+5% from last week</p>
+      </div>
+      <!-- Stat Card 2 -->
+      <div class="p-6 bg-white dark:bg-gray-800 shadow rounded-lg">
+        <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Sales</h2>
+        <p class="text-3xl font-bold text-green-600 dark:text-green-400">$24,567</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400">+10% from last month</p>
+      </div>
+      <!-- Stat Card 3 -->
+      <div class="p-6 bg-white dark:bg-gray-800 shadow rounded-lg">
+        <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Active Projects</h2>
+        <p class="text-3xl font-bold text-purple-600 dark:text-purple-400">56</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400">-3% this quarter</p>
+      </div>
+      <!-- Stat Card 4 -->
+      <div class="p-6 bg-white dark:bg-gray-800 shadow rounded-lg">
+        <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Support Tickets</h2>
+        <p class="text-3xl font-bold text-red-600 dark:text-red-400">123</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400">+15% from yesterday</p>
+      </div>
+    </div>
+  
+    <!-- Main Grid Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- Recent Activity -->
+      <div class="col-span-2 bg-white dark:bg-gray-800 shadow rounded-lg p-6">
+        <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Recent Activity</h2>
+        <ul>
+          <li class="flex items-center justify-between mb-3">
+            <div>
+              <p class="text-sm text-gray-800 dark:text-gray-200">User <span class="font-medium text-blue-600 dark:text-blue-400">John Doe</span> updated a project.</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400">2 hours ago</p>
+            </div>
+            <span class="bg-green-200 text-green-600 text-xs px-2 py-1 rounded">Completed</span>
+          </li>
+          <li class="flex items-center justify-between mb-3">
+            <div>
+              <p class="text-sm text-gray-800 dark:text-gray-200">New ticket opened by <span class="font-medium text-blue-600 dark:text-blue-400">Jane Smith</span>.</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400">5 hours ago</p>
+            </div>
+            <span class="bg-yellow-200 text-yellow-600 text-xs px-2 py-1 rounded">Pending</span>
+          </li>
+          <li class="flex items-center justify-between">
+            <div>
+              <p class="text-sm text-gray-800 dark:text-gray-200">Server backup completed.</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400">1 day ago</p>
+            </div>
+            <span class="bg-blue-200 text-blue-600 text-xs px-2 py-1 rounded">Info</span>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- Mini Table -->
+      <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6">
+        <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Top Products</h2>
+        <table class="w-full text-sm text-left text-gray-800 dark:text-gray-200">
+          <thead>
+            <tr class="bg-gray-100 dark:bg-gray-700">
+              <th class="px-4 py-2">Product</th>
+              <th class="px-4 py-2">Sales</th>
+              <th class="px-4 py-2">Revenue</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-4 py-2">Product A</td>
+              <td class="px-4 py-2">123</td>
+              <td class="px-4 py-2">$1,234</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2">Product B</td>
+              <td class="px-4 py-2">98</td>
+              <td class="px-4 py-2">$980</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2">Product C</td>
+              <td class="px-4 py-2">76</td>
+              <td class="px-4 py-2">$760</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <!-- Full-Width Section -->
+    <div class="mt-8 bg-white dark:bg-gray-800 shadow rounded-lg p-6">
+      <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">System Overview</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="p-4 bg-blue-100 dark:bg-blue-900 rounded">
+          <h3 class="text-sm text-blue-700 dark:text-blue-300">CPU Usage</h3>
+          <p class="text-xl font-bold text-blue-800 dark:text-blue-200">45%</p>
+        </div>
+        <div class="p-4 bg-green-100 dark:bg-green-900 rounded">
+          <h3 class="text-sm text-green-700 dark:text-green-300">Memory Usage</h3>
+          <p class="text-xl font-bold text-green-800 dark:text-green-200">32%</p>
+        </div>
+        <div class="p-4 bg-yellow-100 dark:bg-yellow-900 rounded">
+          <h3 class="text-sm text-yellow-700 dark:text-yellow-300">Disk Space</h3>
+          <p class="text-xl font-bold text-yellow-800 dark:text-yellow-200">78%</p>
+        </div>
+        <div class="p-4 bg-red-100 dark:bg-red-900 rounded">
+          <h3 class="text-sm text-red-700 dark:text-red-300">Network</h3>
+          <p class="text-xl font-bold text-red-800 dark:text-red-200">23 Mbps</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
